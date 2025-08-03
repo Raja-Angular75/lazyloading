@@ -1,0 +1,60 @@
+git init
+git remote add origin https://github.com/your-username/your-repo-name.git
+git add .
+git status--> Shows Current branch and status of the files
+git commit -m "Initial commit"
+git push -u origin main
+git log -->shows the entire history of files which are  made changes on git repository
+git checkout "version ID" to revoke the changes on a particular branch
+git log --all shows the all of the commits
+git rm --cached fileA.txt --> revert from stagged area to working area ie untracked area
+git checkout -b FeatuerA--> create a new branch Features and switched to Features branch
+If you want to merge files from FeatureA to Main
+  step 1) git checkout main
+  step 2) git merge FeatureA
+If you want to show limit the number of commit 
+   if you do some changes in FeatureA and do the commit on FeatureA  as
+        git checkout FeatureA
+        git Add fileA.txt
+        git commit -m "Added changes in FileA"
+   if you do some changes in Main branch and do the commit on Main branch  as
+        git checkout Main
+        git Add fileB.txt
+        git commit -m "Added changes in FileA"
+
+   Now we can do Squach Merge as below
+       
+       git checkout Main
+       git merge --squach FeatureA
+
+   if you look the commit changes using git log --graph you can see the limit number of commits 
+
+  
+         
+
+
+https://git-scm.com/docs-- reference
+
+
+To create a new branch and push data from main to new branch
+
+git checkout main
+git pull origin main
+git checkout -b NewFeatures
+git add .
+git commit -m "Your commit message"
+git push origin NewFeatures
+
+To clone from new branch in the local directory
+
+git clone -b NewFeatures --single-branch https://git-codecommit.ap-south-1.amazonaws.com/v1/repos/formula-builder
+
+
+Now we have created new branches as below
+-----------------------------------------
+1.NewFeatures
+2.features-poc
+
+git clone -b features-poc --single-branch https://git-codecommit.ap-south-1.amazonaws.com/v1/repos/formula-builder
+
+git push origin features-poc
